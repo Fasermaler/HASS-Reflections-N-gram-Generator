@@ -37,10 +37,10 @@ represents 1
 robots 329
 humans 214
 three 153
+are 150
 laws 142
 human 138
 we 113
-have 104
 with 102
 humanity 96
 film 94
@@ -99,9 +99,9 @@ love 11
 
 [N-grams that were not from prompt]
 humans 214
+are 150
 human 138
 we 113
-have 104
 humanity 96
 film 94
 robot 91

@@ -6,12 +6,19 @@
 from ngram import ngram
 
 # Define the word filter lists for n-grams
-gram1_filter_list = [None, "no", "it", "is", "the", "and", "if", "are", "so", "but", "either", "yet",
-               "nor", "for", "although", "as", "because", "but", "even", "though", "how", "however",
-               "since", "unless", "what", "when", "whether", "of", "in", "to", "was", "were", "would", 
-               "that", "at", "can", "this", "be", "from", "not", "they", "by",
-               "their", "an"]
+f = open("filter_words.txt", "r")
+filter_words = f.read().splitlines()
+f.close()
 
+
+# Get the list of filter words
+gram1_filter_list = [None]
+
+for word in filter_words:
+	if word == "":
+		pass
+	else:
+		gram1_filter_list += [word]
 gram2_filter_list = [('we', 'can')]
 
 gram3_filter_list = []

@@ -13,7 +13,7 @@ This small utility takes in a reflection prompts and the submissions from studen
 - N-grams in submissions that are common with prompts
 - N-grams in submissions that are new and unprompted
 
-It is also possible to define the word filters for the N-grams within `reflection_ngram.py`.
+It is also possible to define the word filters for the N-grams within `filter_words.txt`.
 
 ## Quick Start
 
@@ -41,6 +41,8 @@ It is also possible to define the word filters for the N-grams within `reflectio
      ```
 
 6. The output will also be shown on the console
+
+7. To change the filter words, edit the file `filter_words.txt`
 
 ### Sample Generation
 

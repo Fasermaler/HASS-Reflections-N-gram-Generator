@@ -93,11 +93,12 @@ class site_crawler:
 		end_time = time.time()
 		elapsed_time = end_time - start_time
 		print("[INFO] Completed unpacking webpage in " + str(elapsed_time // 60) + " minutes and " + str(int(elapsed_time % 60)) + " seconds")
+
 	def close(self):
 		self.driver.close()
 
-crawler = site_crawler("https://www.facebook.com/groups/2340846329564248/")
-crawler.crawl()
+# crawler = site_crawler("https://www.facebook.com/groups/2340846329564248/")
+# crawler.crawl()
 
 
 

@@ -1,3 +1,7 @@
+import sys
+sys.path.append('./dependencies/')
+
+
 from site_crawler import site_crawler
 from reflection_ngram import reflection_post as reflection
 from post_process import processor
@@ -7,15 +11,15 @@ import os
 import errno
 
 # Set limit on max number of entries per category
-PRECISION = 30
+PRECISION = 300
 
 # Get site data from web crawler
-crawler = site_crawler("https://www.facebook.com/groups/2340846329564248/")
-crawler.crawl()
+#crawler = site_crawler("https://www.facebook.com/groups/2340846329564248/")
+#crawler.crawl()
 
 process = processor()
-process.get_source_from_crawler(crawler) # Get the extracted webpage from the crawler
-#process.get_source_from_local_html("./output1.html")
+# process.get_source_from_crawler(crawler) # Get the extracted webpage from the crawler
+process.get_source_from_local_html("./output1.html")
 process.process_page()
 
 reflections_dict = process.reflections_dict

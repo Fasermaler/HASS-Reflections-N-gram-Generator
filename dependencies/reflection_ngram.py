@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 # Class to handle processing of reflection ngrams
 # Written by Fasermaler
@@ -29,12 +29,12 @@ class reflection_post:
 		self.texts = texts
 
 		# create ngram objects for both prompt and text
-		self.prompt_gram = ngram(gram1_filter_list, 
-	                             gram2_filter_list, 
+		self.prompt_gram = ngram(gram1_filter_list,
+	                             gram2_filter_list,
 	                             gram3_filter_list)
 
-		self.texts_gram = ngram(gram1_filter_list, 
-	                            gram2_filter_list, 
+		self.texts_gram = ngram(gram1_filter_list,
+	                            gram2_filter_list,
 	                            gram3_filter_list)
 
 		# Initialize summary dictionary and human readable summary
@@ -63,7 +63,7 @@ class reflection_post:
 					main_dict[item[0]] = item[1]
 
 		main_dict_list = sorted(main_dict.items(), key=lambda (word, count): -count)
-		
+
 		if k == 0:
 			return main_dict_list
 		if k > len(main_dict_list):
@@ -98,7 +98,7 @@ class reflection_post:
 
 		current_ngrams_list = sorted(current_ngrams.items(), key=lambda (word, count): -count)
 		new_ngrams_list = sorted(new_ngrams.items(), key=lambda (word, count): -count)
-		
+
 		return current_ngrams_list, new_ngrams_list
 
 
@@ -209,8 +209,8 @@ class reflection_post:
 # reflect.process_post()
 # reflect.generate_summary(10)
 
-# reflect1 = ngram(gram1_filter_list, 
-# 	             gram2_filter_list, 
+# reflect1 = ngram(gram1_filter_list,
+# 	             gram2_filter_list,
 # 	             gram3_filter_list)
 
 # reflect1.process_text(text1)

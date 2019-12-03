@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 # Basic Ngram filter and manipulation class
 # Written by Fasermaler
@@ -236,6 +236,3 @@ class ngram:
 
 # # Debug to print the 3-grams
 # # print(gram3)
-
-
-

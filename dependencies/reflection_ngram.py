@@ -6,7 +6,7 @@
 from ngram import ngram
 
 # Define the word filter lists for n-grams
-f = open("filter_words.txt", "r")
+f = open("blacklist.txt", "r")
 filter_words = f.read().splitlines()
 f.close()
 

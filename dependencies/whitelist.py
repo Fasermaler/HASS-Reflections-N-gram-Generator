@@ -7,7 +7,8 @@
 class whitelist:
     def __init__(self, whitelist_txt):
         self.whitelist_words = []
-        self.texts = None
+        self.texts = []
+        self.texts_lower = []
         self.filtered_sentences = []
         self.summary_HR = None
 
@@ -25,10 +26,18 @@ class whitelist:
 
     def get_texts(self, texts):
         # Convert Prompts into a list of sentences
-        self.texts_lower = texts.lower().split(".")
+        self.texts_lower = []
+        self.texts = []
+        self.filtered_sentences = []
+        for text in texts:
+            self.texts_lower.extend(text.lower().split("."))
+
+            self.texts.extend(text.split("."))
+
+
+
         self.texts_lower = filter(self.filter_whitespace, self.texts_lower)
         self.texts_lower = [word.strip() for word in self.texts_lower]
-        self.texts = texts.split(".")
         self.texts = filter(self.filter_whitespace, self.texts)
         self.texts = [word.strip() for word in self.texts]
 
@@ -55,10 +64,7 @@ class whitelist:
 
             words3 = [words[c] + " " + words[c+1] + " " + words[c+2] for c in xrange(len(words)-2)]
             for word in words3:
-                print(word)
-                print(self.whitelist_words)
                 if word in self.whitelist_words:
-                    print('yes')
                     if self.texts[i] not in self.filtered_sentences:
                         print(self.texts[i])
                         self.filtered_sentences.append(self.texts[i])
@@ -77,7 +83,7 @@ class whitelist:
         f = open(output_file, "w+")
         f.write("There are " + str(len(self.filtered_sentences)) + " filtered sentences\n\n")
         for sentence in self.filtered_sentences:
-            f.write(sentence)
+            f.write(sentence.encode("utf-8"))
             f.write("\n")
         f.close()
 

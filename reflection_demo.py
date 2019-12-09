@@ -1,5 +1,9 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
+
+
+import sys
+sys.path.append('./dependencies/')
 
 
 # Simple demo script to process reflections manually
@@ -11,7 +15,7 @@ try:
 	f = open("prompts.txt", "r")
 	prompts = f.read().splitlines()
 	f.close()
-	
+
 	f = open("texts.txt", "r")
 	texts = f.read().splitlines()
 	f.close()

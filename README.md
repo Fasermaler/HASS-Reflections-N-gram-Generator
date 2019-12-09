@@ -2,11 +2,11 @@
 
 Written by: Fasermaler
 
-Partly Referenced from Elucidation's N-gram Generation [Tutorial](https://github.com/Elucidation/Ngram-Tutorial).
+N-gram generation was partly Referenced from Elucidation's N-gram Generation [Tutorial](https://github.com/Elucidation/Ngram-Tutorial).
 
 ## Introduction
 
-This small utility takes in a reflection prompts and the submissions from students and generates N-grams:
+This small utility takes in crawls a specific facebook group for instructor's reflection and the submissions from students. It then generates N-grams from the retrieved text data.
 
 - N-grams of prompts
 - N-grams of submissions
@@ -15,7 +15,58 @@ This small utility takes in a reflection prompts and the submissions from studen
 
 It is also possible to define the word filters for the N-grams within `filter_words.txt`.
 
-## Quick Start
+## Quick Start 
+
+### Full Start (Crawler + N-gram Generation)
+
+1. Install the required dependencies:
+
+   - Selenium: 
+
+     ```bash
+     $ pip install selenium
+     ```
+
+   - BeautifulSoup 4
+
+     ```bash
+     $ pip install beautifulsoup4
+     ```
+
+     or
+
+     ```bash
+     $ apt-get install python-bs4 
+     ```
+
+2. Download the gecko driver for Firefox from here: https://github.com/mozilla/geckodriver/releases and place it in the `/usr/bin/` folder:
+
+   ```bash
+   $ sudo mv geckodriver /usr/bin/geckodriver 
+   ```
+
+   Also install Firefox if you have not already:
+
+   ```bash
+   $ sudo apt-get -y install firefox
+   ```
+
+3. Create a new file called `login_credentials.txt` and put your Facebook login details as follows:
+
+   ```
+   <login email>
+   <login password>
+   ```
+   
+   Yes it's in plain-text but I've spent enough time coding for a **humanities** project already.
+   
+4. Run the main script:
+
+   ```bash
+   $ python main.py
+   ```
+
+### N-gram Generation Demo
 
 1. Put the reflection prompts inside the text file `prompts.txt`
 
@@ -197,3 +248,18 @@ more 31
 do 31
 ```
 
+## To-Do
+
+- Blacklist first
+  - Cherry pick useful words
+    - Concepts important
+      - Author's name 
+      - Synonyms
+    - Concepts people though are important
+  - Include these words in a whole Blacklist
+- Whitelist words + Phrases
+  - Include synonyms
+- Get sentences that included whitelisted words/phrases
+  - Word count limit (?)
+    - Get sentence
+    - If it's too long then cut the length (?)
